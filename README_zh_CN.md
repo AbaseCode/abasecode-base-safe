@@ -1,13 +1,10 @@
-# About
+# 关于AbaseCode
 
-AbaseCode open source project is a set of open source collection . Including the base package , toolkit , security
-package , token package , payment package , excel package and so on.
+AbaseCode OpenCode是一套开源合集。包括基础包、工具包、安全包、token包、支付包、excel包等。
 
-Open source project components to do out of the box, to facilitate more developers to save duplication of work, more
-focused on business logic code writing.
+开源项目的组件做到开箱即用，方便更多的开发者节省重复的工作，更专注于业务逻辑代码编写。
 
-I am Jon, a developer who focuses on learning and spreading technical knowledge. I hope these toolkits can help you, and
-welcome any friends to join this open source project.
+我是Jon，一名全栈开发者，专注于学习和传播技术知识。希望这些工具包能够帮上你，欢迎有的朋友加入这个开源项目。
 
 project homepage : https://abasecode.com
 
@@ -17,15 +14,13 @@ Jon's blog : https://jon.wiki
 
 e-mail: ijonso123@gmail.com
 
-# About abasecode-base-safe
+# 关于 abasecode-base-safe
 
-A http interface encryption and decryption component.
-Receive encrypted http request data and decrypt and submit business processing.
-Return the encrypted data to the http client.
+一个http接口加密和解密组件。 接收加密的http请求数据并解密，提交给业务逻辑处理，之后将加密后的数据返回给http客户端。
 
-# Quick Start
+# 开始使用
 
-## Step 1: setting the pom.xml add dependency
+## Step 1: 配置 pom.xml
 
 ``` xml
 <dependency>
@@ -35,21 +30,21 @@ Return the encrypted data to the http client.
 </dependency>
 ```
 
-## Step 2: setting application.yaml
+## Step 2: 配置 application.yaml
 
 ``` yaml
 app:
   safe:
-    has-rsa: true|false. Boolean. If it is true, it means that the configured IV, KEY, and SECRET have been encrypted with asymmetric public key. The pri-key asymmetric private key string must be configured.
-    iv: String format. Symmetrically encrypted IV. The length is 16 bits. example: "1234567890123456"
-    key: String format. The key of symmetric encryption. The length is 32 bits. example: "01234567891234560123456789123456"
-    secret: String format. The secret of symmetric encryption. The length is 32 bits. example: "1829b4abbba0794301a075fc2283d2ba"    
-    pri-key: String format. If has-rsa is true, this value must be configured. It represents the private key string of asymmetric encryption used by the system. example: "MIIEvQIBADANBgkqh...."
+    has-rsa: true|false. 布尔值。如果为真，意味着配置的IV、KEY和SECRET已经用非对称公钥进行了加密。必须配置pri-key非对称私钥字符串。
+    iv：字符串格式。对称加密的IV。长度为16位。例如。"1234567890123456"
+    key: 字符串格式。对称加密的密钥。长度为32位。例如。"01234567891234560123456789123456"
+    secret: 字符串格式。对称加密的秘密。长度为32位。例如。"1829b4abbba0794301a075fc2283d2ba"    
+    pri-key：字符串格式。如果has-rsa为真，必须配置此值。它代表系统使用的非对称加密的私钥字符串，例如。"MIIEvQIBADANBgkqh...."
 ```
 
-## Step 3: add @EnableCodeSafe in SpringBoot Application
+## Step 3: 添加 @EnableCodeSafe 注解
 
-Like this:
+如下:
 
 ```java
 @SpringBootApplication
@@ -63,7 +58,7 @@ public class TestApplication {
 }
 ```
 
-Of course, you can also use
+当然，也可以使用如下：
 
 ```java
 @SpringBootApplication
@@ -77,11 +72,11 @@ public class TestApplication {
 }
 ```
 
-The @EnableCodeSafe annotation is recommended. Here's the answer: who ask me why it doesn't work.
+推荐使用 @EnableCodeSafe 注解。
 
-## Step 4: Use @Encrypt annotation before the method that needs encryption
+## Step 4: 使用 @Encrypt 注解加密
 
-example:
+示例代码:
 
 ``` java
     @GetMapping(value = "/user")
@@ -95,7 +90,7 @@ example:
     }
 ```
 
-It maybe returns
+它将返回：
 
 ```json
 {
@@ -106,18 +101,18 @@ It maybe returns
 }
 ```
 
-## Step 5: Use @Decrypt annotation in the parameter to decrypt.
+## Step 5: 使用 @Decrypt 注解解密
 
-example:
+示例代码:
 
-```
+``` java
     @PostMapping(value = "/user")
     public CodeResult setUser(@RequestBody @Decrypt User u){
         return CodeResult.ok("OK",u);
     }
 ```
 
-the json data:
+json 数据:
 
 ```json
 {
@@ -126,7 +121,7 @@ the json data:
 }
 ```
 
-And then return:
+返回结果:
 
 ```json
 {
@@ -141,9 +136,7 @@ And then return:
 }
 ```
 
-## Step 6 : No more step. Enjoy it.
-
-## Default Key
+## 默认 Key
 
 ### public key
 
@@ -153,10 +146,10 @@ MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAr7EzZwdUqO5K/PZpS7dhVUT6DBslpzKcAgrV
 
 ### private key
 
-you can find it in the code.
-Warning: For data security, please do not use the default key pair.
+请看代码。
+注意：请勿使用默认秘钥。
 
-## AES EXAMPLE
+## AES 示例
 
 ```java
     public static void main(String[]args)throws Exception{
@@ -169,5 +162,4 @@ Warning: For data security, please do not use the default key pair.
         String decrypt=decrypt(encrypt,key,iv,add);
         System.out.println(decrypt);
     }
-
 ```

@@ -1,0 +1,29 @@
+{
+  "properties": [
+    {
+      "name": "app.safe.key",
+      "type": "java.lang.String",
+      "description": "Symmetric encryption key."
+    },
+    {
+      "name": "app.safe.iv",
+      "type": "java.lang.String",
+      "description": "Symmetric encryption IV."
+    },
+    {
+      "name": "app.safe.secret",
+      "type": "java.lang.String",
+      "description": "The key for sign."
+    },
+    {
+      "name": "app.safe.private-key",
+      "type": "java.lang.String",
+      "description": "The private key for sign."
+    },
+    {
+      "name": "app.safe.has-rsa",
+      "type": "java.lang.Boolean",
+      "description": "True: all parameters are encrypted. False: All parameters are unencrypted."
+    }
+  ]
+}
