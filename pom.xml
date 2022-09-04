@@ -6,7 +6,7 @@
 
     <groupId>com.abasecode.opencode</groupId>
     <artifactId>abasecode-base-safe</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.2</version>
     <packaging>jar</packaging>
 
     <name>${project.artifactId}</name>
@@ -56,7 +56,7 @@
         <dependency>
             <groupId>com.abasecode.opencode</groupId>
             <artifactId>abasecode-base-code</artifactId>
-            <version>1.0.0</version>
+            <version>1.0.2</version>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
