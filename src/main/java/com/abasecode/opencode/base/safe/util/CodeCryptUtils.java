@@ -2,8 +2,8 @@ package com.abasecode.opencode.base.safe.util;
 
 import com.abasecode.opencode.base.code.CodeResult;
 import com.abasecode.opencode.base.safe.SafeResult;
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson2.JSON;
+import com.alibaba.fastjson2.JSONObject;
 import org.apache.commons.codec.binary.Hex;
 import org.apache.commons.lang3.StringUtils;
 
@@ -52,7 +52,7 @@ public class CodeCryptUtils {
     private static Map<String, Object> decryptString2Map(String data, String key, String iv) throws Exception {
         String jsonString = CodeAesUtils.decrypt(data, key, iv);
         JSONObject jsonObject = JSON.parseObject(jsonString);
-        Map<String, Object> map = JSONObject.toJavaObject(jsonObject, Map.class);
+        Map<String, Object> map = jsonObject.to(Map.class);
         return map;
     }
 
@@ -88,9 +88,9 @@ public class CodeCryptUtils {
     public static SafeResult encryptData(CodeResult result, String key, String iv, String secret) throws Exception {
         String json = JSONObject.toJSONString(result.getData());
         Map map;
-        if (CodeJSONUtils.hasJsonString(json)) {
+        if (CodeJsonUtils.hasJsonString(json)) {
             JSONObject jsonObject = JSON.parseObject(json);
-            map = JSONObject.toJavaObject(jsonObject, Map.class);
+            map = jsonObject.to(Map.class);
         } else {
             map = new HashMap();
             map.put("data", json);

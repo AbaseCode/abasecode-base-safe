@@ -31,7 +31,7 @@ Return the encrypted data to the http client.
 <dependency>
     <groupId>com.abasecode.opencode</groupId>
     <artifactId>abasecode-base-safe</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.3</version>
 </dependency>
 ```
 

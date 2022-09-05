@@ -6,7 +6,7 @@
 
     <groupId>com.abasecode.opencode</groupId>
     <artifactId>abasecode-base-safe</artifactId>
-    <version>1.0.2</version>
+    <version>1.0.3</version>
     <packaging>jar</packaging>
 
     <name>${project.artifactId}</name>
@@ -56,18 +56,13 @@
         <dependency>
             <groupId>com.abasecode.opencode</groupId>
             <artifactId>abasecode-base-code</artifactId>
-            <version>1.0.2</version>
+            <version>1.0.3</version>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.18.24</version>
             <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-simple</artifactId>
-            <version>2.0.0</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -91,8 +86,8 @@
             <version>1.70</version>
         </dependency>
         <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>fastjson</artifactId>
+            <groupId>com.alibaba.fastjson2</groupId>
+            <artifactId>fastjson2</artifactId>
             <version>2.0.12</version>
         </dependency>
         <dependency>

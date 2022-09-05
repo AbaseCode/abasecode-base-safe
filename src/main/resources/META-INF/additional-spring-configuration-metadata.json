@@ -3,22 +3,22 @@
     {
       "name": "app.safe.key",
       "type": "java.lang.String",
-      "description": "Symmetric encryption key."
+      "description": "Symmetric encryption key. 32 bits."
     },
     {
       "name": "app.safe.iv",
       "type": "java.lang.String",
-      "description": "Symmetric encryption IV."
+      "description": "Symmetric encryption IV. 16 bits."
     },
     {
       "name": "app.safe.secret",
       "type": "java.lang.String",
-      "description": "The key for sign."
+      "description": "The key for sign. 32 bits."
     },
     {
       "name": "app.safe.private-key",
       "type": "java.lang.String",
-      "description": "The private key for sign."
+      "description": "The private key for sign. rsa private key."
     },
     {
       "name": "app.safe.has-rsa",

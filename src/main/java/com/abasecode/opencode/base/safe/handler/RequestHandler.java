@@ -5,7 +5,7 @@ import com.abasecode.opencode.base.safe.SafeResult;
 import com.abasecode.opencode.base.safe.annotation.Decrypt;
 import com.abasecode.opencode.base.safe.config.SafeConfig;
 import com.abasecode.opencode.base.safe.util.CodeCryptUtils;
-import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson2.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.MethodParameter;
 import org.springframework.http.HttpHeaders;
