@@ -156,7 +156,7 @@ MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAr7EzZwdUqO5K/PZpS7dhVUT6DBslpzKcAgrV
 you can find it in the code.
 Warning: For data security, please do not use the default key pair.
 
-## AES EXAMPLE
+## AES example
 
 ```java
     public static void main(String[]args)throws Exception{
