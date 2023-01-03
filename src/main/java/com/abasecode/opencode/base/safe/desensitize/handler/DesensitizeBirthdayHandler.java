@@ -32,10 +32,6 @@ public class DesensitizeBirthdayHandler extends BaseTypeHandler<String> {
         try{
             String s1 = CodeDesensitizeUtils.desensitizeBirthday(s);
             preparedStatement.setString(i,s1);
-//            log.info("**********************");
-//            log.info("原值："+ s);
-//            log.info("脱敏："+s1);
-//            log.info("**********************");
         }catch (Exception e){
             preparedStatement.setString(i,s);
         }
