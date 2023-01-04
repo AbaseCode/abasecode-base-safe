@@ -26,7 +26,7 @@ e-mail: ijonso123@gmail.com
 <dependency>
     <groupId>com.abasecode.opencode</groupId>
     <artifactId>abasecode-base-safe</artifactId>
-    <version>1.0.3</version>
+    <version>1.1.0</version>
 </dependency>
 ```
 
