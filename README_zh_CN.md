@@ -152,7 +152,7 @@ MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAr7EzZwdUqO5K/PZpS7dhVUT6DBslpzKcAgrV
 ## AES 示例
 
 ```java
-    public static void main(String[]args)throws Exception{
+    public static void main(String[] args) throws Exception {
         String txt="Hello world!";
         String key="0123456780123456";
         String iv="012345678012";

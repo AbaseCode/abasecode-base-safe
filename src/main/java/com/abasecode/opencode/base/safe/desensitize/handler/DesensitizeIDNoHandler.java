@@ -31,6 +31,10 @@ public class DesensitizeIDNoHandler extends BaseTypeHandler<String> {
         try{
             String s1 = CodeDesensitizeUtils.desensitizeCnIdNo(s);
             preparedStatement.setString(i,s1);
+            log.info("**********************");
+            log.info("原值："+ s);
+            log.info("脱敏："+s1);
+            log.info("**********************");
         }catch (Exception e){
             preparedStatement.setString(i,s);
         }

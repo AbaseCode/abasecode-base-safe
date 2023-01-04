@@ -33,7 +33,12 @@ public class PassSecretHandler extends BaseTypeHandler<String> {
         try{
             String s1 = CodeAesUtils.encrypt(s, codeSafe.getKey(),codeSafe.getIv());
             preparedStatement.setString(i,s1);
+            log.info("**********************");
+            log.info("原值："+ s);
+            log.info("加密："+s1);
+            log.info("**********************");
         }catch (Exception e){
+            log.info("密码加密失败了");
             preparedStatement.setString(i,s);
         }
     }
@@ -42,8 +47,13 @@ public class PassSecretHandler extends BaseTypeHandler<String> {
     public String getNullableResult(ResultSet resultSet, String s) throws SQLException {
         String s1 = resultSet.getString(s);
         try{
+            log.info("字段："+ s);
+            log.info("原值："+ s1);
             s1= CodeAesUtils.decrypt(s1,codeSafe.getKey(),codeSafe.getIv());
+            log.info("解密："+s1);
+            log.info("**********************");
         } catch (Exception e){
+            System.out.println("密码解密"+e.getMessage());
         }
         return s1;
     }
